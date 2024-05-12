@@ -1,0 +1,158 @@
+# Ques. What is Git?
+# Ans. Git is a distributed version control system designed for tracking changes in source code during software development.
+
+# Ques. What are the advantages of using Git over other version control systems?
+# Ans. The advantages of Git include distributed development, robust branching, and efficient handling of large repositories.
+
+# Ques. Explain the basic Git workflow?
+# Ans. The basic Git workflow involves three main stages: working directory, staging area, and repository. Developers make changes in the working directory, stage them using "git add" to prepare for a commit, and then commit changes to the repository using "git commit" to create a snapshot of the project's state.
+
+# Ques. What is a repository in Git?
+# Ans. A repository in Git is a directory where a project's files and version history are stored, allowing for collaborative development and version control.
+
+# Ques. What is the difference between Git and GitHub?
+# Ans.Git is a version control system used for tracking changes in files, while GitHub is a platform that hosts Git repositories and facilitates collaboration and code sharing among developers.
+
+# Ques. How do you initialize a Git repository?
+# Ans. To initialize a Git repository, you navigate to the root directory of your project in the terminal and run the command "git init".
+
+# Ques. What is a commit in Git?
+# Ans. A commit in Git is a snapshot of changes made to files in a repository at a specific point in time, along with a commit message describing the changes.
+
+# Ques. Explain the difference between git add, git commit, and git push?
+# Ans. 
+# 1. git add: This command adds changes from the working directory to the staging area. It prepares files for the next commit by marking them to be included in the commit snapshot.
+# 2. git commit: This command creates a new commit in the local repository using the changes that have been staged (added) with git add. It captures a snapshot of the changes and records a commit message describing the modifications.
+# 3. git push: This command uploads local repository commits to a remote repository, such as GitHub or GitLab. It synchronizes the local repository's commits with the remote repository, making them accessible to collaborators and updating the remote repository's history.
+
+# Ques. How do you check the status of your Git repository?
+# Ans. To check the status of your Git repository, you can use the following command: 
+# ---> git status
+
+# Running this command in your terminal will display information about the current state of your repository, including any changes that have been made, files that are staged for commit, and untracked files. It's a helpful way to see what's happening in your repository and what actions you may need to take next.
+
+# Ques. What is a branch in Git? How do you create and switch between branches?
+# Ans. In Git, a branch is a separate line of development that allows you to work on features, bug fixes, or experiments without affecting the main codebase. It essentially represents an independent series of commits.
+# To create a branch in Git, you can use the following command:
+
+# git branch <branch-name>
+
+# This command creates a new branch with the specified name. However, it does not switch to the newly created branch; you remain on your current branch.
+# To switch between branches, you can use the following command:
+
+# git checkout <branch-name>
+
+# This command switches your working directory to the specified branch, allowing you to continue your work in the context of that branch.
+# Alternatively, you can create and switch to a new branch in a single step using the following command:
+
+# git checkout -b <new-branch-name>
+
+# This command creates a new branch with the specified name and immediately switches to it.
+# Overall, branches in Git provide a powerful mechanism for managing and organizing your development workflow, allowing for parallel development efforts and experimentation without disrupting the main codebase.
+
+# Ques. What is a merge conflict in Git? How do you resolve it?
+# Ans. A merge conflict occurs in Git when the changes in two branches cannot be automatically merged due to conflicting modifications to the same file. To resolve a merge conflict, you need to manually edit the conflicted files to reconcile the differences and then commit the resolved changes.
+# Example:
+# 1. During a merge operation, Git detects conflicting changes in a file.
+# 2. To resolve, open the conflicted file, resolve the conflicting sections, and save the changes.
+# 3. After resolving all conflicts, stage the modified files with git add and commit the changes with git commit.
+
+# Ques. Explain the difference between git merge and git rebase
+# Ans. git merge integrates changes from one branch into another, preserving the commit history of both branches by creating a new merge commit. In contrast, git rebase applies changes from one branch onto another by reapplying each commit on top of the target branch, resulting in a linear commit history.
+
+# Example:
+
+# 1. Merge branches:
+#  git checkout master
+#    git merge feature-branch
+# 2. Rebase branches:
+#  git checkout feature-branch
+#    git rebase master
+
+# While merge maintains the original commit history, rebase creates a linear history by incorporating changes from one branch onto another.
+
+# Ques. What is the purpose of git clone?
+# Ans. The git clone command is used to create a local copy of a remote repository, including all branches, commits, and files. It allows developers to work on projects locally and collaborate with others by fetching updates from the remote repository.
+
+# Example:
+
+# 1. Cloning a repository from a remote URL:
+#  git clone <repository-url>
+
+# 2. Accessing the cloned repository and working on it locally:
+#  cd <repository-directory>
+
+# By using git clone, developers can obtain a complete copy of a repository, enabling them to contribute to projects and work offline with version-controlled files.
+
+# Ques. How do you undo the last commit in Git?
+# Ans. To undo the last commit in Git, you can use the git reset command. The --soft option keeps changes in the working directory, and the HEAD^ indicates the last commit.
+
+# Example:
+
+# 1. Undo the last commit and keep changes in the working directory:
+# git reset --soft HEAD^
+
+# 2. Amend the changes if needed and commit again:
+# git commit -am "New commit message"
+
+# This process effectively removes the last commit while preserving the changes in the working directory for further modifications or recommitting.
+
+# Ques. What is the git fetch command used for?
+# Ans. The git fetch command is used to retrieve changes from a remote repository without merging them into the local branch. It updates the remote tracking branches in the local repository to reflect the latest changes on the remote server.
+
+# Example:
+# 1. Fetching changes from the remote repository:
+# git fetch origin
+
+# 2. Viewing the fetched changes:
+# git log origin/master
+
+# This command helps keep the local repository up-to-date with changes made in the remote repository, enabling developers to review updates before merging them into their local branches.
+
+# Ques. Explain the concept of Git remotes?
+# Ans. Git remotes are references to remote repositories where the project is stored, allowing collaboration and synchronization between local and remote repositories. They enable operations like fetching updates, pushing changes, and merging branches across distributed environments.
+
+# Example:
+
+# 1. Adding a remote repository:
+# git remote add origin <remote-url>
+
+# 2. Fetching updates from the remote repository:
+# git fetch origin
+
+# By configuring remotes, developers can work on the same codebase collaboratively and keep their local repositories synchronized with the latest changes from remote sources.
+
+# Ques. How do you revert a commit that has already been pushed to a remote repository?
+# Ans. To revert a commit that has been pushed to a remote repository, you can use the git revert command to create a new commit that undoes the changes introduced by the original commit. After reverting locally, push the changes to the remote repository.
+
+# Example:
+
+# 1. Revert the commit locally:
+# git revert <commit-hash>
+
+# 2. Push the revert commit to the remote repository:
+# git push origin <branch-name>
+
+# This approach creates a new commit that negates the changes introduced by the original commit, effectively reverting its impact in the repository's history.
+
+# Ques. What is the difference between git pull and git fetch followed by git merge?
+# Ans. git pull fetches changes from a remote repository and merges them into the current branch in one step, while git fetch followed by git merge separates the fetching of changes from the remote repository and the merging process, allowing for more control over the integration of changes.
+
+# Example:
+
+# 1. git pull origin master: Fetches changes from the master branch of the remote repository named origin and merges them into the current branch.
+
+# 2. git fetch origin master followed by git merge origin/master: Fetches changes from the master branch of the remote repository named origin and merges them into the current branch, giving the user more control over when to merge.
+
+# Ques. How do you delete a branch in Git?
+# Ans. To delete a branch in Git, you can use the git branch -d command followed by the branch name. If the branch has unmerged changes, you'll need to force delete it using git branch -D.
+
+# Example:
+
+# 1. Deleting a merged branch:
+# git branch -d <branch-name>
+
+# 2. Deleting an unmerged branch:
+# git branch -D <branch-name>
+
+# These commands remove the specified branch from the local repository.
